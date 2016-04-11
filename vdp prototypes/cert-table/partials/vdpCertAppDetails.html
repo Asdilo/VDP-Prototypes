@@ -1,0 +1,98 @@
+<md-sidenav class="md-sidenav-right md-whiteframe-z2 md-sticky-header" md-component-id="app-details" layout-fill>
+    <md-toolbar class="md-whiteframe-z1" layout="row">
+        <md-button aria-label="View_App">
+            <md-tooltip>
+                Open Details
+            </md-tooltip>
+            <md-icon class="material-icons">launch</md-icon>
+        </md-button>
+        <h3>{{table.selectedObject.appDisplayName}}</h3>
+    </md-toolbar>
+    <md-content layout-padding>
+        <div>
+            <h4>Application Data</h4>
+            <md-input-container>
+                <md-icon class="material-icons">edit</md-icon> 
+                <input ng-model="table.selectedObject.appDisplayName" placeholder="App Name" type="text">
+            </md-input-container>
+            <md-input-container>
+                <md-icon class="material-icons">edit</md-icon>
+                <textarea ng-model="table.selectedObject.appDescription" col="1" md-maxlength="200" placeholder="Description"></textarea>
+            </md-input-container>
+        </div>
+            <div>
+                <p class="md-body-1"><strong>Developer:</strong> {{table.selectedObject.developerEmail}}</p>
+                <p class="md-body-1"><strong>Company:</strong> {{table.selectedObject.company}}</p>
+                <p class="md-body-1"><strong>Created on:</strong> {{table.selectedObject.appCreationDate}} </p>
+                <p class="md-body-1"><strong>Approved On:</strong> {{table.selectedObject.appApprovalDate}} </p>
+                <p class="md-body-1"><strong>Last modified:</strong> {{table.selectedObject.lastModifiedDate}}</p>
+                <p class="md-body-1"><strong>Modified By:</strong> {{table.selectedObject.lastModifiedByEmail}}</p>
+            </div>
+
+        <div>
+            <div ng-if="!table.isAppApproved()">
+                <md-divider></md-divider>
+                <h4>Validation Progress</h4>
+                <md-list>
+                    <!-- TODO: should testing details be collapsible? -->
+                    <h5>Total Progress</h5>
+                    <md-progress-linear md-mode="determinate" value="{{table.selectedObject.totalTestsComplete}}"></md-progress-linear>
+                    <md-list-item>{{table.selectedObject.totalTestsComplete}}%</md-list-item>
+                    <h5>Testsuite Detail</h5>
+                    <md-list-item ng-repeat="suite in table.selectedObject.validationResults" layout="columns">
+                        <p class="md-body-1">
+                            {{suite.suiteName}} : {{suite.percentComplete}}%
+                        </p>
+                        <md-progress-linear class="md-hue-7" md-mode="determinate" flex layout-fill value="{{suite.percentComplete}}"></md-progress-linear>
+                    </md-list-item>
+                </md-list>
+                <md-button layout-fill class="md-raised md-accent" ng-hide="table.isAppApproved()" ng-disabled="!table.ableToApprove()" ng-click="table.approveApp()">
+                    <md-icon class="material-icons">check</md-icon>Approve App
+                </md-button>
+            </div>
+
+            <div>
+                <md-divider></md-divider>
+                <form>
+                    <md-input-container>
+                        <label>Email cert summary to:</label><input ng-model="table.email" type="email">
+                    </md-input-container>
+                    <md-button layout-fill class="md-raised md-accent"  ng-click="table.sendCertSummary()">
+                        <md-icon class="material-icons">mail</md-icon>E-mail Cert Summary
+                    </md-button>
+                </form>
+            </div>
+
+            <div>
+                <md-divider></md-divider>
+                <h4>License Management</h4>
+                <md-list layout="column">
+                    <md-list-item layout-wrap ng-repeat="lic in table.licenseList">
+                        <div flex>
+                            <p><strong>Key:</strong> {{lic.key}}</p>
+                            <p><strong>Expiry:</strong> {{lic.expiry}}</p>
+                            <p ng-hide="lic.status"><strong>Inactive</strong></p>
+                            <p ng-show="lic.status"><strong>Active</strong></p>
+                        </div>
+                        <div flex>
+                            <md-button class="md-raised" ng-if="lic.status" ng-click="table.revokeLicense($event, lic)" layout-fill><md-icon class="material-icons">block</md-icon> Revoke</md-button>
+                            <md-button class="md-raised" ng-if="!lic.status" ng-click="table.unrevokeLicense($event, lic)" layout-fill><md-icon class="material-icons">undo</md-icon> Unrevoke</md-button>
+                        </div>
+                    </md-list-item>
+                </md-list>
+                <md-button class="md-raised md-teal" ng-click="table.addLicense($event)" layout-fill><md-icon class="material-icons">add</md-icon> Add License</md-button>
+            </div>
+
+            <div ng-if="!table.isAppApproved()">
+                <md-divider></md-divider>
+                <h4>Agreements</h4>
+                <md-checkbox ng-checked="table.selectedObject.prodSecuritySigned" class="md-primary" ng-click="table.toggleAgreement('prodSecuritySigned')">Prod Security </md-checkbox>
+                <md-checkbox ng-checked="table.selectedObject.developerAgreementSigned" class="md-primary" ng-click="table.toggleAgreement('developerAgreementSigned')">Developer Agreement:</md-checkbox>
+            </div>
+
+            <div>
+                <md-button class="md-raised md-primary save" layout-fill ng-click="table.saveAppChanges()"><md-icon class="material-icons">save</md-icon> Save changes</md-button>
+            </div>
+        </div>
+    </md-content>
+</md-sidenav>

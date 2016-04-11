@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="vdpApp">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>VDP Prototypes | Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link href="./css/app.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="homeCtrl as home" layout="row">
+    <div layout="column" layout-fill ng-cloak>
+
+        <md-toolbar class="md-primary">
+            <div class="md-toolbar-tools">
+                <h2 class="md-flex">VDP Prototypes</h2>
+            </div>
+        </md-toolbar>
+        <md-content flex layout-padding>
+            <p>Click on the buttons below to view the HMTL prototypes</p>
+                <md-button href="../login" target="_blank" class="md-primary md-raised">Login Prototype <md-icon class="material-icons">launch</md-icon></md-button>
+                <md-button href="../cert-table" target="_blank" class="md-primary md-raised">Cert Table Prototype <md-icon class="material-icons">launch</md-icon></md-button>
+                <md-button href="../license-mgmt" target="_blank" class="md-primary md-raised">License Management Prototype <md-icon class="material-icons">launch</md-icon></md-button>
+
+        </md-content>
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/home.js"></script>
+
+
+</body>
+
+</html>

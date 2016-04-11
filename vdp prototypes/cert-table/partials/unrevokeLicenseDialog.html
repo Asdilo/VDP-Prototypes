@@ -1,0 +1,25 @@
+<md-dialog aria-label='license-mgmt-dialog' layout-padding>
+    <md-dialog-content layout="column">
+        <h3>
+            <md-icon class="md-warn material-icons">warning</md-icon>
+            You selected the 'Unrevoke License' management option. Are you sure you want to proceed?
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris varius dignissim aliquam. Phasellus nec urna vitae augue molestie porta at vitae dui. Aenean sed magna laoreet, aliquet quam ac, semper est. Nullam quis lobortis ante. Maecenas eleifend aliquet orci, at sagittis erat facilisis sed. Curabitur rhoncus urna eget tempor accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam at laoreet tortor. Integer pretium congue nisl nec placerat. Morbi ultrices quis orci vitae bibendum. Donec nisl velit, vestibulum laoreet nisl ut, feugiat varius enim. Sed pretium massa tortor, semper tristique libero mattis eget. Sed a erat neque.
+        </p>
+
+        <p>
+            Vestibulum cursus lacinia eros non imperdiet. Sed tristique eget erat non tempor. Maecenas vitae interdum leo, id auctor mi. Nullam est neque, malesuada ac tortor vitae, maximus elementum tellus. Vestibulum a leo ac est varius tempus. Maecenas et aliquam justo, id placerat purus. Suspendisse potenti. Integer commodo nisl quis libero auctor semper. In blandit sed risus eu tempor.
+        </p>
+
+        <md-input-container>
+            <label>Enter Unrevoke Reason</label>
+            <textarea ng-model="ctrl.reason" md-maxlength="200"></textarea>
+        </md-input-container>
+        <md-checkbox ng-model="ctrl.checked" class="md-warn">Acknowledge</md-checkbox>
+    </md-dialog-content>
+    <md-dialog-actions class="md-dialog-actions" layout="row">
+        <md-button ng-disabled="ctrl.disabled()" ng-click="ctrl.closeDialog()">Unrevoke</md-button>
+        <md-button ng-click="ctrl.cancelDialog()">Cancel</md-button>
+    </md-dialog-actions>
+</md-dialog>

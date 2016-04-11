@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="vdpApp">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>License Management Prototype</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link href="./css/app.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="licenseCtrl as license" layout="row">
+    <vdp-menu></vdp-menu>
+    <div layout="column" layout-fill ng-cloak>
+        <vdp-header></vdp-header>
+        <md-content>
+            <div layout="column" layout-gt-md="row" layout-wrap>
+
+                <app-card id="1"></app-card>
+                <app-card></app-card>
+                <app-card></app-card>
+
+            </div>
+            <md-button flex="grow" class="md-raised md-primary" ng-click="license.onboardApp($event)"><md-icon class="material-icons">add</md-icon>Add Application</md-button>
+        </md-content>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/license-mgmt.js"></script>
+    <script src="./scripts/vdpMenuDir.js"></script>
+    <script src="./scripts/vdpHeaderDir.js"></script>
+    <script src="./scripts/appCardDir.js"></script>
+
+
+</body>
+
+</html>

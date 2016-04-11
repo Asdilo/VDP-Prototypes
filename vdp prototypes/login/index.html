@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="vdpApp">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>VDP | Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.1/angular-material.min.css">
+    <script type="text/javascript" src="./scripts/app-data.js"></script>
+    <link rel="stylesheet" href="./css/app.css">
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body layout="row" ng-controller="vdpLoginCtrl as ctrl" layout-align="center center">
+    <md-content class="autoScroll login" flex layout-padding>
+        <md-card layout-fill>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h1>
+                        <span>VDP Login Screen V1.0</span>
+                    </h1>
+                </div>
+
+            </md-toolbar>
+            <br />
+            <form layout-padding name="loginForm" method="post">
+                <md-input-container class="md-icon-float">
+                    <label>User ID</label>
+                    <md-icon class="material-icons">person</md-icon>
+                    <input required="" ng-model="tbd" md-maxlength="10" type="text">
+                </md-input-container>
+                <md-input-container class="md-icon-float">
+                    <label>Password</label>
+                    <md-icon class="material-icons">lock</md-icon>
+                    <input required="" name="loginPass" ng-model="tbd2" md-minlength="8" md-maxlength="8" type="text">
+                </md-input-container>
+            </form>
+            <div layout="row" layout-align="space-between center">
+                <md-button ng-click="ctrl.loginDialog($event)">Need help? </md-button>
+            </div>
+            <md-button class="md-raised md-primary">Sign In</md-button>
+        </md-card>
+    </md-content>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.1/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/vdpLoginCtrl.js"></script>
+
+</body>
+
+</html>

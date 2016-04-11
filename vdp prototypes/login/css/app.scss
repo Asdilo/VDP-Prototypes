@@ -1,0 +1,48 @@
+﻿.md-toolbar-tools h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: inherit;
+}
+
+.listdemoBasicUsage md-divider {
+  margin-top: 10px;
+    margin-bottom: 10px; }
+
+.material-icons.hide {
+    display:none;
+    
+}
+
+.material-icons.show {
+    display:inline-block;
+}
+
+.cert-table{
+    overflow-wrap: break-word;
+    text-overflow:ellipsis;
+    position:relative;
+    .cert-table-list md-list-item:nth-child(odd){
+        background-color:rgba(0,0,0, .03);       
+    }
+}
+
+md-sidenav, 
+md-sidenav.md-locked-open, 
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 300px /*!important*/;
+    width: 85% /*!important*/;
+    max-width: 400px /*!important*/;
+    overflow-x:hidden;
+}
+   .md-sticky-header{
+          overflow: hidden;
+      }
+      
+      .md-sticky-header>md-content{
+          height:90%;
+      }
+
+.login{
+    max-width:500px;
+    min-height:400px;
+}

@@ -1,0 +1,87 @@
+﻿<md-card flex-gt-sm="45" flex-sm="100" class="md-sticky-header app-card" aria-label="{{license.fakeData.appName}}">
+    <md-toolbar layout-padding class="md-whiteframe-z1">
+        <h3 layout-margin>{{license.fakeData.appName}} <md-button class="md-warn" flex="grow"><md-icon class="material-icons">block</md-icon> Revoke</md-button></h3>
+    </md-toolbar>
+    <md-content>
+        <div layout="row" layout-wrap layout-margin>
+            <md-input-container class="md-icon-float md-icon-right" flex="100">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.appName" type="text" placeholder="Application Name" />
+            </md-input-container>
+
+            <md-input-container class="md-icon-float" flex="60">
+                <input ng-model="license.fakeData.appID" type="text" placeholder="Application ID" disabled/>
+            </md-input-container>
+            <md-input-container class="md-icon-float" flex="35">
+                <input ng-model="license.fakeData.date" type="date" placeholder="Application Created" disabled />
+            </md-input-container>
+        </div>
+
+        <md-subheader class="md-primary">Entitlements</md-subheader>
+        <md-divider flex="100"></md-divider>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="VAS">
+                <md-content class="md-padding" layout-wrap layout="row">
+                    <p class="md-body-2">
+                        Value Added Services (VAS):<br />
+                        <span class="md-body-1 ">{{license.fakeData.entSum1}} </span>
+                    </p>
+                    <md-input-container flex="100" class="md-icon-float">
+                        <!--<md-icon class="material-icons">edit</md-icon>-->
+                        <input ng-model="license.fakeData.ent1" type="text" placeholder="Data Entitlements" disabled />
+                    </md-input-container>
+                </md-content>
+            </md-tab>
+            <md-tab label="PWS">
+                <md-content class="md-padding" layout-wrap layout="row">
+                    <p class="md-body-2">
+                        Payment Web Services (PWS):<br />
+                        <span class="md-body-1 md-accent">{{license.fakeData.entSum2}} </span>
+                    </p>
+                    <md-input-container flex="100" class="md-icon-float">
+                        <!--<md-icon class="material-icons">edit</md-icon>-->
+                        <input ng-model="license.fakeData.ent2" type="text" placeholder="Data Entitlements" disabled/>
+                    </md-input-container>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+        <md-subheader class="md-primary">Licenses</md-subheader>
+        <md-divider flex="100"></md-divider>
+
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="{{license.fakeData.licID}}">
+                <md-content class="md-padding">
+                    <h4 class="md-subhead">{{license.fakeData.licID}} <span class="md-caption">Created {{license.fakeData.date}}</span> <md-button class="md-raised md-warn" flex="grow"><md-icon class="material-icons">block</md-icon> Revoke</md-button></h4>
+                    <p class="md-body-2">
+                        Data Entitlements:<br />
+                        <span class="md-body-1 ">{{license.fakeData.licURI}} </span>
+                    </p>
+                    <p class="md-body-2">
+                        Access Entitlements:<br />
+                        <span class="md-body-1 md-accent">{{license.fakeData.licURI}} </span>
+                    </p>
+                </md-content>
+            </md-tab>
+            <md-tab label="{{license.fakeData.licID}}">
+                <md-content class="md-padding">
+                    <h4 class="md-subhead">{{license.fakeData.licID}} <span class="md-caption">Created {{license.fakeData.date}}</span> <md-button class="md-raised md-warn" flex="grow"><md-icon class="material-icons">block</md-icon> Revoke</md-button></h4>
+                    <p class="md-body-2 md-primary">
+                        Data Entitlements:<br />
+                        <span class="md-body-1 ">{{license.fakeData.licURI}} </span>
+                    </p>
+                    <p class="md-body-2">
+                        Access Entitlements:<br />
+                        <span class="md-body-1 md-accent">{{license.fakeData.licURI}} </span>
+                    </p>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+
+        <div layout="row" layout-wrap>
+            <md-button flex="grow" class="md-raised md-primary"><md-icon class="material-icons">add</md-icon> Add License</md-button>
+            <md-button flex="grow" class="md-raised md-primary"><md-icon class="material-icons">save</md-icon> Save Changes</md-button>
+        </div>
+    </md-content>
+
+</md-card>
