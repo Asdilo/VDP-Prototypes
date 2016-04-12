@@ -1,0 +1,32 @@
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\csc.exe
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\System.Collections.Immutable.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\System.Reflection.Metadata.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\vbc.exe
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\VBCSCompiler.exe
+C:\Source\VDP Prototypes\vdp prototypes\bin\roslyn\VBCSCompiler.exe.config
+C:\Source\VDP Prototypes\vdp prototypes\bin\vdp prototypes.dll.config
+C:\Source\VDP Prototypes\vdp prototypes\bin\vdp prototypes.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\vdp prototypes.pdb
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.DependencyCollector.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.Web.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.WindowsServer.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.ApplicationInsights.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.DependencyCollector.xml
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.Web.xml
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.AI.WindowsServer.xml
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.ApplicationInsights.xml
+C:\Source\VDP Prototypes\vdp prototypes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Source\VDP Prototypes\vdp prototypes\obj\Debug\vdp prototypes.csprojResolveAssemblyReference.cache
+C:\Source\VDP Prototypes\vdp prototypes\obj\Debug\vdp prototypes.dll
+C:\Source\VDP Prototypes\vdp prototypes\obj\Debug\vdp prototypes.pdb
