@@ -10,7 +10,7 @@
         vm.toggleLeftSidenav = toggleLeftSidenav;
         vm.onboardApp = onboardApp;
         vm.showEnt = false;
-
+        
         vm.fakeData = {
             date: new Date(),
             expiry: new Date(),
@@ -41,7 +41,7 @@
             $mdToast.show(toastObj);
         }
 
-        function onboardApp($event, license) {
+        function onboardApp($event) {
             //optionsObj defines the appearance of the modal popup
             var optionsObj = {
                 clickOutsideToClose: true,
@@ -60,10 +60,15 @@
                 vm.closeDialog = closeDialog;
                 vm.cancelDialog = cancelDialog;
                 vm.appDialog = appDialog;
-
+                
+                vm.entSum1 = 'Entitlement Summary (string). A brief explaination of what the entitlement will allow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lacus. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla.';
+                vm.entSum2 = 'EntitlementSummary (string). A brief explaination of what the entitlement will allow. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla. Duis sodales vel dui eu sagittis.';
+                vm.cbLitle = false;
+                
                 function closeDialog() {
                     $mdDialog.hide();
                     showToast("Onboarding Cancelled");
+                    console.log(license);
                 }
 
                 function cancelDialog() {
