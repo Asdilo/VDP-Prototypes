@@ -1,0 +1,53 @@
+﻿<md-dialog aria-label="Application Onboarding">
+<!-- Note: Would you ever come to this screen if you're not a new app?' 
+     If it is a new app, need to store ng-model values in an object somewhere-->
+    <md-toolbar layout-padding class="md-whiteframe-z1">
+        <h3 layout-margin>New App Name: {{license.fakeData.appName}} </h3>
+    </md-toolbar>
+    <md-content>
+        <div layout="row" layout-wrap layout-margin layout-padding>
+            <md-input-container class="md-icon-float md-icon-right" flex="100">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.appName" type="text" placeholder="Application Name" />
+            </md-input-container>
+
+            <md-input-container class="md-icon-float" flex="60">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.appID" type="text" placeholder="Application ID" />
+            </md-input-container>
+            <md-input-container class="md-icon-float" flex="35">
+                <input ng-model="license.fakeData.date" type="date" placeholder="Application Created" disabled />
+            </md-input-container>
+            <md-input-container class="md-icon-float" flex="100">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.instanceOf" type="text" placeholder="Certified App Instance" disabled />
+            </md-input-container>        
+        </div>
+
+        <md-button flex="grow" class="md-raised md-primary" ng-hide="license.showEnt" ng-click="license.showEnt = !license.showEnt"><md-icon class="material-icons">verified_user</md-icon> Validate Info</md-button>
+        <div ng-show="license.showEnt" layout="column" layout-wrap layout-margin>
+            <h3 class="md-primary">Select Available Services</h3>
+
+            <div>
+                <md-checkbox md-no-ink aria-label="Checkbox VAS" ng-model="ctrl.cbLitle" class="md-primary md-align-top-left">
+                    Litle <span class="md-caption"><br /> {{ctrl.entSum1}} </span>                    
+                </md-checkbox>
+                <md-input-container ng-show="ctrl.cbLitle" layout-padding>
+                    <md-icon class="material-icons">edit</md-icon>
+                    <input type="text" ng-model="license.fakeData.subscriber" placeholder="Subscriber ID"/> 
+                </md-input-container>
+            </div>
+            
+            <div>
+                <md-checkbox md-no-ink aria-label="Checkbox PWS" ng-model="license.fakeData.cbPWS" class="md-primary md-align-top-left">
+                    Payment Web Services (PWS): <span class="md-caption"><br /> {{ctrl.entSum2 }} </span>
+                </md-checkbox>
+            </div>
+
+            <md-button flex="grow" class="md-raised md-primary" ng-click="ctrl.appDialog()"><md-icon class="material-icons">add</md-icon> Add Application</md-button>
+        </div>
+    </md-content>
+    <md-dialog-actions class="md-dialog-actions" layout="row">
+        <md-button ng-click="ctrl.cancelDialog()">Cancel</md-button>
+    </md-dialog-actions>
+</md-dialog>
