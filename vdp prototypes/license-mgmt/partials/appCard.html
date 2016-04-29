@@ -1,23 +1,33 @@
 ﻿<md-card flex-gt-sm="45" flex-sm="100" class="md-sticky-header app-card" aria-label="{{license.fakeData.appName}}">
-    <md-toolbar layout-padding class="md-whiteframe-z1">
-        <h3 layout-margin>{{license.fakeData.appName}} <md-button class="md-warn" flex="grow"><md-icon class="material-icons">block</md-icon> Revoke</md-button></h3>
+    <md-toolbar class="md-whiteframe-z1">
+        <div layout-margin layout="column" layout-align="center center">
+            <h3 flex>{{license.fakeData.appName}}</h3>
+            <h6 flex>Instance of: {{license.fakeData.instanceOf}}</h6>
+        </div>
     </md-toolbar>
     <md-content>
-        <div layout="row" layout-wrap layout-margin>
-            <md-input-container class="md-icon-float md-icon-right" flex="100">
-                <md-icon class="material-icons">edit</md-icon>
-                <input ng-model="license.fakeData.appName" type="text" placeholder="Application Name" />
-            </md-input-container>
-
-            <md-input-container class="md-icon-float" flex="60">
-                <input ng-model="license.fakeData.appID" type="text" placeholder="Application ID" disabled/>
-            </md-input-container>
-            <md-input-container class="md-icon-float" flex="35">
-                <input ng-model="license.fakeData.date" type="date" placeholder="Application Created" disabled />
-            </md-input-container>
+        <div layout="column" layout-wrap layout-margin layout-padding>
+            <div layout-sm="column" layout-gt-sm="row" layout-padding> 
+                <md-input-container class="md-icon-float md-icon-right">
+                    <md-icon class="material-icons">edit</md-icon>
+                    <input ng-model="license.fakeData.appName" type="text" placeholder="Application Name" />
+                </md-input-container>
+                <md-input-container class="md-icon-float">
+                    <input ng-model="license.fakeData.appID" type="text" placeholder="Application ID" disabled/>
+                </md-input-container>
+            </div>
+            
+            <div layout-sm="column" layout-gt-sm="row" layout-padding>
+                <md-input-container class="md-icon-float">
+                    <input ng-model="license.fakeData.date" type="date" placeholder="Application Created" disabled />
+                </md-input-container>
+                <md-input-container class="md-icon-float">
+                    <input ng-model="license.fakeData.expiry" type="date" placeholder="Application Expiry" disabled />
+                </md-input-container>            
+            </div>
         </div>
 
-        <md-subheader class="md-primary">Entitlements</md-subheader>
+        <md-subheader class="md-primary">Services</md-subheader>
         <md-divider flex="100"></md-divider>
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab label="VAS">
@@ -53,27 +63,11 @@
             <md-tab label="{{license.fakeData.licID}}">
                 <md-content class="md-padding">
                     <h4 class="md-subhead">{{license.fakeData.licID}} <span class="md-caption">Created {{license.fakeData.date}}</span> <md-button class="md-raised md-warn" flex="grow"><md-icon class="material-icons">block</md-icon> Revoke</md-button></h4>
-                    <p class="md-body-2">
-                        Data Entitlements:<br />
-                        <span class="md-body-1 ">{{license.fakeData.licURI}} </span>
-                    </p>
-                    <p class="md-body-2">
-                        Access Entitlements:<br />
-                        <span class="md-body-1 md-accent">{{license.fakeData.licURI}} </span>
-                    </p>
                 </md-content>
             </md-tab>
             <md-tab label="{{license.fakeData.licID}}">
                 <md-content class="md-padding">
                     <h4 class="md-subhead">{{license.fakeData.licID}} <span class="md-caption">Created {{license.fakeData.date}}</span> <md-button class="md-raised md-warn" flex="grow"><md-icon class="material-icons">block</md-icon> Revoke</md-button></h4>
-                    <p class="md-body-2 md-primary">
-                        Data Entitlements:<br />
-                        <span class="md-body-1 ">{{license.fakeData.licURI}} </span>
-                    </p>
-                    <p class="md-body-2">
-                        Access Entitlements:<br />
-                        <span class="md-body-1 md-accent">{{license.fakeData.licURI}} </span>
-                    </p>
                 </md-content>
             </md-tab>
         </md-tabs>

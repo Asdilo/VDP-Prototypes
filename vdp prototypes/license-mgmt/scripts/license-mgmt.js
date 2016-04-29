@@ -13,9 +13,11 @@
 
         vm.fakeData = {
             date: new Date(),
+            expiry: new Date(),
             merName: 'Merchant Name (string)',
             appName: 'Application Name (string)',
             appID: 'Application ID (string)',
+            instanceOf: 'Certified App ID (string)',
             licID: 'License ID (string)',
             licVer: 'License Version (string)',
             entSum1: 'Entitlement Summary (string). A brief explaination of what the entitlement will allow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lacus. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla.',
@@ -58,8 +60,6 @@
                 vm.closeDialog = closeDialog;
                 vm.cancelDialog = cancelDialog;
                 vm.appDialog = appDialog;
-
-                clickOutsideToClose: true;
 
                 function closeDialog() {
                     $mdDialog.hide();
