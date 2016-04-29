@@ -22,8 +22,7 @@
             licVer: 'License Version (string)',
             entSum1: 'Entitlement Summary (string). A brief explaination of what the entitlement will allow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lacus. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla.',
             entSum2: 'EntitlementSummary (string). A brief explaination of what the entitlement will allow. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla. Duis sodales vel dui eu sagittis.',
-            ent1: 'Example:VASID',
-            ent2: 'Example: Subscriber ID',
+            ent1: 'Example: Subscriber ID',
             cbVAS: true,
             cbPWS: false,
             licURI: 'http://vantiv.com/esauth/api/access/something/otherstuff (key/value pair)'
