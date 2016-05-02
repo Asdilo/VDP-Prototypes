@@ -6,12 +6,47 @@
     //THIS IS THE EVERYTHING FUNCTION FOR VISUAL PROTOTYPING!! IT SHOULD NOT BE USED AS IS IN PRODUCTION!!
     function tableCtrl($mdSidenav, $mdDialog, $mdToast, tableFactory) {
         var vm = this;
-
+        
+        vm.merchantFlex = 30;
+        vm.appFlex = 30;
+        vm.licenseFlex = 20;
+        vm.expiryFlex = 20;
+        
         vm.onboardApp = onboardApp;
         vm.toggleLeftSidenav = toggleLeftSidenav;
         vm.fakeTableData = [
             new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17")
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),                    
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
+            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
+            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),                            
         ];
         
         function showToast(message) {

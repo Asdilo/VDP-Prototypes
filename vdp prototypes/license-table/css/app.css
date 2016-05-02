@@ -55,6 +55,7 @@ md-list-item div p {
 #table-list md-list-item:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.03); }
 
-.table-card {
-  height: 100%;
+.cursor-on-hover{ 
+  cursor: pointer; 
+  cursor: hand; 
 }
