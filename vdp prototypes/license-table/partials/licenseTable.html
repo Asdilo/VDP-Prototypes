@@ -1,8 +1,8 @@
-<md-content>
+<div layout-fill>
     <md-card class="table-card">
         <md-card-content>
             <md-card-header class="md-sticky">
-                <div layout="row" layout-fill>
+                <div hide-xs layout="row" layout-fill>
                     <h3 flex="30">Merchant</h3>
                     <h3 flex="30">Application</h3>
                     <h3 flex="20">License</h3>
@@ -12,14 +12,14 @@
             <md-divider></md-divider>
             <md-list id="table-list">
                 <md-list-item ng-repeat="app in table.fakeTableData">
-                    <div layout="row" layout-margin layout-fill>
-                        <p flex="30">{{app.merchant}}</p>
-                        <p flex="30">{{app.app}}</p>
-                        <p flex="20">{{app.license}}</p>
-                        <p flex="20">{{app.expiry}}</p>            
+                    <div layout-xs="column" layout-gt-xs="row" layout-margin layout-fill>
+                        <p flex-xs="100" flex-gt-xs="30"><span hide-gt-xs><strong>Merchant: </strong></span>{{app.merchant}}</p>
+                        <p flex-xs="100" flex-gt-xs="30"><span hide-gt-xs><strong>App: </strong></span>{{app.app}}</p>
+                        <p flex-xs="100" flex-gt-xs="20"><span hide-gt-xs><strong>License: </strong></span>{{app.license}}</p>
+                        <p flex-xs="100" flex-gt-xs="20"><span hide-gt-xs><strong>Expiry: </strong></span>{{app.expiry}}</p>            
                     </div>    
                 </md-list-item>
             </md-list>
         </md-card-content>
     </md-card>    
-</md-content>
+</div>
