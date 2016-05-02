@@ -1,14 +1,18 @@
 ﻿(function () {
 
     angular.module('vdpApp')
-      .controller('tableCtrl', ['$mdSidenav', '$mdDialog', '$mdToast', tableCtrl]);
+      .controller('tableCtrl', ['$mdSidenav', '$mdDialog', '$mdToast', 'tableFactory', tableCtrl]);
 
     //THIS IS THE EVERYTHING FUNCTION FOR VISUAL PROTOTYPING!! IT SHOULD NOT BE USED AS IS IN PRODUCTION!!
-    function tableCtrl($mdSidenav, $mdDialog, $mdToast) {
+    function tableCtrl($mdSidenav, $mdDialog, $mdToast, tableFactory) {
         var vm = this;
 
         vm.onboardApp = onboardApp;
         vm.toggleLeftSidenav = toggleLeftSidenav;
+        vm.fakeTableData = [
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17")
+        ];
         
         function showToast(message) {
             var toastObj = {
@@ -65,7 +69,6 @@
         function toggleLeftSidenav() {
             $mdSidenav('left').toggle();
         }
-
     }
 
 

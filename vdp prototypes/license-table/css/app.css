@@ -46,3 +46,11 @@ md-sidenav.md-closed.md-locked-open-add-active {
   max-width: 500px;
   min-height: 400px; }
 
+md-list-item div p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#table-list md-list-item:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.03); }
