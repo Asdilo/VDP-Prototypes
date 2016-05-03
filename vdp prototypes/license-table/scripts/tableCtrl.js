@@ -7,46 +7,58 @@
     function tableCtrl($mdSidenav, $mdDialog, $mdToast, tableFactory) {
         var vm = this;
         
+        // these variables control the flex percentages of the table cells
         vm.merchantFlex = 30;
         vm.appFlex = 30;
         vm.licenseFlex = 20;
         vm.expiryFlex = 20;
         
+        vm.showSearch = false; // search bar shows or hides based on this value
+        vm.toggleSearch = function() {vm.showSearch = !vm.showSearch;};
+        
         vm.onboardApp = onboardApp;
         vm.toggleLeftSidenav = toggleLeftSidenav;
         vm.fakeTableData = [
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),        
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),                    
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),        
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),
-            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
-            new tableFactory("Appasaurus Rex", "Apparaptor", "qwirj1@#$%%", "5/1/17"),
-            new tableFactory("Muhammed Appi", "Float Like A Butterfly", "aklfjoig!#$g", "8/1/16"),
-            new tableFactory("Merchant Merchant Merchant", "Big App-le", "!@#$asdfj#@$", "12/1/16"),                            
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),        
+            new tableFactory("App Merchant With A Really Really Really Really Big Name", "Big App Corp", false, "abcdefh123456asklfdjkasjf18347!@#$#@$@#", "4/28/16"), 
+            new tableFactory("Hostile Takeover Bank", "Appasaurus Rex", false, "afjgjgfj!@$dgljk", "9/1/16"),
+            new tableFactory("Mr. Cluck's Chicken" , "App-acino", false, "!#$fdgjk#$", "12/1/17"),
+            new tableFactory("Ready For Promotion", "App-amatox", true),                
         ];
         
         function showToast(message) {
@@ -104,6 +116,7 @@
         function toggleLeftSidenav() {
             $mdSidenav('left').toggle();
         }
+        
     }
 
 

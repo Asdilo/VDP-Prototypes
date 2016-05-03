@@ -1,16 +1,30 @@
 <md-content>
     <md-subheader hide-xs>
+        <div ng-show="table.showSearch">
+            <md-input-container md-no-float class="md-block">
+                <md-icon class="material-icons cursor-on-hover" ng-click="table.toggleSearch()">search</md-icon>
+                <input type="text" placeholder="Search" ng-model="query">
+            </md-input-container>
+        </div>        
         <div layout="row" layout-margin layout-fill>
             <h3 flex="{{table.merchantFlex}}" class="cursor-on-hover">Merchant<md-icon class="material-icons">import_export</md-icon></h3>
             <h3 flex="{{table.appFlex}}" class="cursor-on-hover">Application<md-icon class="material-icons">import_export</md-icon></h3>
             <h3 flex="{{table.licenseFlex}}">License</h3>
-            <h3 flex="{{table.expiryFlex}}" class="cursor-on-hover">Expiry<md-icon class="material-icons">import_export</md-icon></h3>    
+            <h3 flex="{{table.expiryFlex}}" class="cursor-on-hover">Expiry
+                <md-icon class="material-icons">import_export</md-icon>
+                &nbsp
+                <md-icon class="material-icons cursor-on-hover" ng-click="table.toggleSearch()">search</md-icon>
+            </h3>    
         </div>            
     </md-subheader>    
     <md-list id="table-list">
-        <md-list-item ng-repeat="app in table.fakeTableData">
+        <md-list-item ng-repeat="app in table.fakeTableData | filter:query">
             <div layout-xs="column" layout-gt-xs="row" layout-margin layout-fill>
-                <p class="cursor-on-hover" flex-xs="100" flex-gt-xs="{{table.merchantFlex}}"><md-tooltip md-direction="top">Go to License Detail</md-tooltip><md-icon class="material-icons">launch</md-icon><span hide-gt-xs><strong>Merchant: </strong></span>{{app.merchant}}</p>
+                <p class="cursor-on-hover" flex-xs="100" flex-gt-xs="{{table.merchantFlex}}">
+                    <md-tooltip md-direction="top">Go to License Detail</md-tooltip>
+                    <md-icon class="material-icons">more_horiz</md-icon>
+                    <span hide-gt-xs><strong>Merchant: </strong></span>{{app.merchant}}
+                </p>
                 <p flex-xs="100" flex-gt-xs="{{table.appFlex}}"><span hide-gt-xs><strong>App: </strong></span>{{app.app}}</p>
                 <p flex-xs="100" flex-gt-xs="{{table.licenseFlex}}"><span hide-gt-xs><strong>License: </strong></span>{{app.license}}</p>
                 <p flex-xs="100" flex-gt-xs="{{table.expiryFlex}}"><span hide-gt-xs><strong>Expiry: </strong></span>{{app.expiry}}</p>            

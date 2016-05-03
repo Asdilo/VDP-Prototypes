@@ -53,9 +53,14 @@ md-list-item div p {
 }
 
 #table-list md-list-item:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.03); }
+    background-color: rgba(0, 0, 0, 0.03);
+}
 
 .cursor-on-hover{ 
   cursor: pointer; 
   cursor: hand; 
+}
+
+#search-icon {
+  float: right;
 }

@@ -3,11 +3,12 @@
       .factory('tableFactory', tableFactory);
 
     function tableFactory() {
-      function AppData(merch, app, lic, expiry){
+      function AppData(merch, app, promote, lic, expiry){
        this.merchant = merch;
        this.app = app;
-       this.license = lic;
-       this.expiry = expiry;       
+       this.promote = promote || false;
+       this.license = lic || "";
+       this.expiry = expiry || "";       
       }
       
       return AppData;
