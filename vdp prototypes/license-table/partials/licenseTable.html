@@ -2,7 +2,10 @@
     <md-subheader hide-xs>
         <div ng-show="table.showSearch">
             <md-input-container md-no-float class="md-block">
-                <md-icon class="material-icons cursor-on-hover" ng-click="table.toggleSearch()">search</md-icon>
+                <md-icon class="material-icons cursor-on-hover" ng-click="table.toggleSearch()">
+                    search
+                    <md-tooltip>Hide Search Bar</md-tooltip>
+                </md-icon>
                 <input type="text" placeholder="Search" ng-model="query">
             </md-input-container>
         </div>        
@@ -13,7 +16,10 @@
             <h3 flex="{{table.expiryFlex}}" class="cursor-on-hover">Expiry
                 <md-icon class="material-icons">import_export</md-icon>
                 &nbsp
-                <md-icon class="material-icons cursor-on-hover" ng-click="table.toggleSearch()">search</md-icon>
+                <md-icon class="material-icons cursor-on-hover" ng-click="table.toggleSearch()">
+                    search
+                    <md-tooltip>Toggle Search Bar</md-tooltip>
+                </md-icon>
             </h3>    
         </div>            
     </md-subheader>    
