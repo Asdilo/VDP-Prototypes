@@ -13,10 +13,13 @@
         
         vm.fakeData = {
             date: new Date(),
-            expiry: new Date(),
             merName: 'Merchant Name (string)',
+            merchantEmail: 'merchant@merchant.com',
+            externalId: '12345',
             appName: 'Application Name (string)',
             appID: 'Application ID (string)',
+            apiKey: '12342345',
+            apigeeId: "1235",
             instanceOf: 'Certified App ID (string)',
             licID: 'License ID (string)',
             licVer: 'License Version (string)',
@@ -25,7 +28,11 @@
             ent1: 'Example: Subscriber ID',
             cbVAS: true,
             cbPWS: false,
-            licURI: 'http://vantiv.com/esauth/api/access/something/otherstuff (key/value pair)'
+            cbCustom: false,
+            licURI: 'http://vantiv.com/esauth/api/access/something/otherstuff (key/value pair)',
+            customAccess: "www.damndaniel.com",
+            customKey: "123458!%$",
+            customValue: "1324G@#$fg"
         };
         
 

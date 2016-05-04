@@ -2,31 +2,49 @@
 <!-- Note: Would you ever come to this screen if you're not a new app?' 
      If it is a new app, need to store ng-model values in an object somewhere-->
     <md-toolbar layout-padding class="md-whiteframe-z1">
-        <h3 layout-margin>New App Name: {{license.fakeData.appName}} </h3>
+        <h3 layout-margin>Application Onboarding</h3>
     </md-toolbar>
-    <md-content>
+    <md-dialog-content>
         <div layout="row" layout-wrap layout-margin layout-padding>
+            <md-subheader class="md-primary md-no-sticky">Merchant Information</md-subheader>    
+            <md-input-container class="md-icon-float md-icon-right" flex="100">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.merchantName" type="text" placeholder="Merchant Name" />
+            </md-input-container>
+
+            <md-input-container class="md-icon-float" flex="60">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.merchantEmail" type="email" placeholder="Merchant Email" />
+            </md-input-container>
+            <md-input-container class="md-icon-float" flex="35">
+                <input ng-model="license.fakeData.externalId" type="date" placeholder="External ID"/>
+            </md-input-container>        
+        </div>
+        <div layout="row" layout-wrap layout-margin layout-padding>
+            <md-subheader class="md-primary md-no-sticky">Application Information</md-subheader>
             <md-input-container class="md-icon-float md-icon-right" flex="100">
                 <md-icon class="material-icons">edit</md-icon>
                 <input ng-model="license.fakeData.appName" type="text" placeholder="Application Name" />
             </md-input-container>
 
-            <md-input-container class="md-icon-float" flex="60">
+            <md-input-container class="md-icon-float" flex="50">
                 <md-icon class="material-icons">edit</md-icon>
-                <input ng-model="license.fakeData.appID" type="text" placeholder="Application ID" />
+                <input ng-model="license.fakeData.apigeeID" type="text" placeholder="Apigee ID" />
             </md-input-container>
-            <md-input-container class="md-icon-float" flex="35">
-                <input ng-model="license.fakeData.date" type="date" placeholder="Application Created" disabled />
-            </md-input-container>
-            <md-input-container class="md-icon-float" flex="100">
+            <md-input-container class="md-icon-float" flex="45">
                 <md-icon class="material-icons">edit</md-icon>
                 <input ng-model="license.fakeData.instanceOf" type="text" placeholder="Certified App Instance" disabled />
             </md-input-container>        
+            
+            <md-input-container class="md-icon-float" flex="60">
+                <md-icon class="material-icons">edit</md-icon>
+                <input ng-model="license.fakeData.apiKey" type="text" placeholder="API Key" />
+            </md-input-container>
         </div>
 
         <md-button flex="grow" class="md-raised md-primary" ng-hide="license.showEnt" ng-click="license.showEnt = !license.showEnt"><md-icon class="material-icons">verified_user</md-icon> Validate Info</md-button>
         <div ng-show="license.showEnt" layout="column" layout-wrap layout-margin>
-            <h3 class="md-primary">Select Available Services</h3>
+            <md-subheader class="md-primary md-no-sticky">Select Entitlements</md-subheader>
 
             <div>
                 <md-checkbox md-no-ink aria-label="Checkbox VAS" ng-model="ctrl.cbLitle" class="md-primary md-align-top-left">
@@ -43,10 +61,30 @@
                     Payment Web Services (PWS): <span class="md-caption"><br /> {{ctrl.entSum2 }} </span>
                 </md-checkbox>
             </div>
-
+            
+            
+            <div layout="column">
+                <md-checkbox md-no-ink aria-label="Checkbox Custom" ng-model="ctrl.cbCustom" class="md-primary md-align-top-left">
+                    Custom 
+                </md-checkbox>
+                <div ng-show="ctrl.cbCustom" layout="row" layout-wrap>
+                <md-input-container layout-padding flex="100">
+                    <md-icon class="material-icons">edit</md-icon>
+                    <input type="text" ng-model="license.fakeData.customAccess" placeholder="Access Entitlement"/> 
+                </md-input-container>
+                
+                <md-input-container layout-padding flex="50">
+                    <md-icon class="material-icons">edit</md-icon>
+                    <input type="text" ng-model="license.fakeData.customKey" placeholder="Data Entitlement Key"/> 
+                </md-input-container>            
+                <md-input-container layout-padding flex="45">
+                    <md-icon class="material-icons">edit</md-icon>
+                    <input type="text" ng-model="license.fakeData.customValue" placeholder="Data Entitlement Value"/> 
+                </md-input-container>            
+            </div>
             <md-button flex="grow" class="md-raised md-primary" ng-click="ctrl.appDialog()"><md-icon class="material-icons">add</md-icon> Add Application</md-button>
         </div>
-    </md-content>
+    </md-dialog-content>
     <md-dialog-actions class="md-dialog-actions" layout="row">
         <md-button ng-click="ctrl.cancelDialog()">Cancel</md-button>
     </md-dialog-actions>
