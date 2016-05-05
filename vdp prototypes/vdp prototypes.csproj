@@ -155,6 +155,7 @@
     <Content Include="login\css\app.css.map" />
     <Content Include="login\css\app.scss" />
     <Content Include="css\app.scss" />
+    <None Include="Properties\PublishProfiles\vdp-prototypes - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\vdp-prototypes - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\vdp-prototypes - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
