@@ -10,6 +10,7 @@
         vm.toggleLeftSidenav = toggleLeftSidenav;
         vm.onboardApp = onboardApp;
         vm.showEnt = false;
+        vm.toggleEdit = toggleEdit;
         
         vm.fakeData = {
             date: new Date(),
@@ -26,6 +27,7 @@
             entSum1: 'Entitlement Summary (string). A brief explaination of what the entitlement will allow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis placerat lacus. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla.',
             entSum2: 'EntitlementSummary (string). A brief explaination of what the entitlement will allow. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla. Pellentesque sed mi interdum, ultrices magna vitae, varius nulla. Duis sodales vel dui eu sagittis.',
             ent1: 'Example: Subscriber ID',
+            editEntitlement: true,
             cbVAS: true,
             cbPWS: false,
             cbCustom: false,
@@ -92,6 +94,13 @@
 
         function toggleLeftSidenav() {
             $mdSidenav('left').toggle();
+        }
+        
+        function toggleEdit() {
+            if(vm.fakeData.editEntitlement){
+                vm.fakeData.editEntitlement = false;
+            }
+            console.log(vm.fakeData.editEntitlement);
         }
 
     }

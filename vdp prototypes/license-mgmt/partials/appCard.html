@@ -41,14 +41,19 @@
                         Litle:<br />
                         <span class="md-body-1 ">{{license.fakeData.entSum1}} </span>
                     </p>
-                    <md-input-container flex="100" class="md-icon-float">
+                    <md-input-container flex="100" class="md-icon-float" >
                         <md-icon class="material-icons">edit</md-icon>
-                        <input ng-model="license.fakeData.ent1" type="text" placeholder="Data Entitlements"/>
+                        <input ng-model="license.fakeData.ent1" ng-change="license.toggleEdit()" type="text" placeholder="Data Entitlements"/>
                     </md-input-container>
                     <md-button class="md-raised md-warn">
                         <md-icon class="material-icons">block</md-icon> 
                         Remove Access Entitlement
                     </md-button>                
+                    
+                    <md-button class="md-raised md-primary" ng-disabled="license.fakeData.editEntitlement">
+                        <md-icon class="material-icons">save</md-icon> 
+                        Save Changes
+                    </md-button>                  
                 </md-content>
             </md-tab>
             <md-tab label="PWS">
@@ -95,7 +100,7 @@
                             <md-content class="md-padding" layout-wrap layout="row">
                                 <p class="md-body-2">
                                     Litle:<br />
-                                    <span class="md-body-1 ">{{license.fakeData.entSum1}} </span>
+                                        <span class="md-body-1 ">{{license.fakeData.entSum1}} </span>
                                 </p>
                                 <md-input-container flex="100" class="md-icon-float">
                                     <md-icon class="material-icons">edit</md-icon>
