@@ -138,6 +138,19 @@
     <Content Include="license-mgmt\partials\appCard.html" />
     <Content Include="license-mgmt\partials\onboardDialog.html" />
     <Content Include="license-mgmt\scripts\appCardDir.js" />
+    <Content Include="license-table\css\app.css" />
+    <Content Include="license-table\css\app.min.css" />
+    <Content Include="license-table\index.html" />
+    <Content Include="license-table\partials\licenseTable.html" />
+    <Content Include="license-table\partials\onboardDialog.html" />
+    <Content Include="license-table\partials\vdpHeader.html" />
+    <Content Include="license-table\partials\vdpMenu.html" />
+    <Content Include="license-table\scripts\app.js" />
+    <Content Include="license-table\scripts\licenseTableDir.js" />
+    <Content Include="license-table\scripts\tableCtrl.js" />
+    <Content Include="license-table\scripts\tableFactory.js" />
+    <Content Include="license-table\scripts\vdpHeaderDir.js" />
+    <Content Include="license-table\scripts\vdpMenuDir.js" />
     <Content Include="login\css\app.css" />
     <Content Include="login\css\app.min.css" />
     <Content Include="login\index.html" />
@@ -155,6 +168,7 @@
     <Content Include="login\css\app.css.map" />
     <Content Include="login\css\app.scss" />
     <Content Include="css\app.scss" />
+    <Content Include="license-table\css\app.scss" />
     <None Include="Properties\PublishProfiles\vdp-prototypes - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\vdp-prototypes - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\vdp-prototypes - Web Deploy.pubxml" />
