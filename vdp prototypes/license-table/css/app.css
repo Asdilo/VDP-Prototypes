@@ -64,3 +64,8 @@ md-list-item div p {
 #search-icon {
   float: right;
 }
+
+.devhub-logo {
+  height: auto;
+  width: 100%;
+}

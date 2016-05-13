@@ -49,4 +49,9 @@ md-sidenav.md-closed.md-locked-open-add-active {
   min-height: 400px;
 }
 
+.devhub-logo {
+  height: auto;
+  width: 100%;
+}
+
 /*# sourceMappingURL=app.css.map */

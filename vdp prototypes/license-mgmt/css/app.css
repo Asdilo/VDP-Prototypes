@@ -1,6 +1,10 @@
 ﻿body {
   font-family: 'Roboto', Calibri, Arial, sans-serif; }
 
+.devhub-logo {
+  height: auto;
+  width: 100%;
+}
 .md-toolbar-tools h1 {
   font-size: inherit;
   font-weight: inherit;
